@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faL, faNavicon } from "@fortawesome/free-solid-svg-icons";
 
 
-export const SideModel = ({ ref }) => {
+export const SideModel = ({ ref , setSideBar}) => {
 
     return (
       <>
-        {ref && <div className="w-full h-screen absolute top-10 left-0 bg-[#111111b5] ">chal raha ia </div>}
+        {ref && <div onClick={() => setSideBar(false)} className="w-full h-screen absolute top-10 left-0 bg-[#111111b5] ">chal raha ia </div>}
       </>
     )
 
@@ -33,7 +33,7 @@ export default function App() {
       <button onClick={() => setSideBar(true)} className="flex items-center absolute top-10.5 left-0.5 px-1.5 duration-200 py-2 rounded-[50%] active:bg-[#7474743b]">
         <FontAwesomeIcon icon={faNavicon} className="scale-[1.3] text-[white]"/>
       </button>
-      <SideModel ref={sideBar}/>
+      <SideModel setSideBar={setSideBar} ref={sideBar}/>
       <div className={`absolute z-20 top-10 duration-300 ${sideBar ? "left-0" : "-translate-x-45"} h-screen pl-2 pr-3 bg-white flex flex-col w-43 pt-1`}>
         <button onClick={() => setSideBar(false)} className="items-center w-fit transform -translate-x-1 ml-0 px-1.5 duration-200 py-1 rounded-[50%] active:bg-[#2121213b]">
           <FontAwesomeIcon icon={faNavicon} className="scale-[1.3]"/>
