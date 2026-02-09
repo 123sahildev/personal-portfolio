@@ -3,6 +3,17 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faL, faNavicon } from "@fortawesome/free-solid-svg-icons";
 
+
+export const SideModel = ({ ref }) => {
+
+    return (
+      <>
+        {ref && <div className="w-full h-screen absolute top-10 left-0 bg-[#111111b5] ">chal raha ia </div>}
+      </>
+    )
+
+}
+
 export default function App() {
   const [sideBar, setSideBar] = useState(false);
 
@@ -22,20 +33,21 @@ export default function App() {
       <button onClick={() => setSideBar(true)} className="flex items-center absolute top-10.5 left-0.5 px-1.5 duration-200 py-2 rounded-[50%] active:bg-[#7474743b]">
         <FontAwesomeIcon icon={faNavicon} className="scale-[1.3] text-[white]"/>
       </button>
-
-      <div className={`absolute top-10 duration-300 ${sideBar ? "left-0" : "-translate-x-42"} h-screen pl-2 pr-3 bg-white flex flex-col w-40 pt-1`}>
+      <SideModel ref={sideBar}/>
+      <div className={`absolute z-20 top-10 duration-300 ${sideBar ? "left-0" : "-translate-x-45"} h-screen pl-2 pr-3 bg-white flex flex-col w-43 pt-1`}>
         <button onClick={() => setSideBar(false)} className="items-center w-fit transform -translate-x-1 ml-0 px-1.5 duration-200 py-1 rounded-[50%] active:bg-[#2121213b]">
           <FontAwesomeIcon icon={faNavicon} className="scale-[1.3]"/>
         </button>
-        <li className=" pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] rounded-[5px] active:bg-[#7474743b] mb-1 list-none w-full">Home</li>
-        <li className=" pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] rounded-[5px] active:bg-[#7474743b] mb-1 list-none w-full">projects</li>
-        <li className=" pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] rounded-[5px] active:bg-[#7474743b] mb-1 list-none w-full">about</li>
-        <li className=" pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] rounded-[5px] active:bg-[#7474743b] mb-1 list-none w-full">Contact</li>
+        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] active:bg-[#7474743b] mb-1  w-full">Home</button>
+        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">projects</button>
+        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">about</button>
+        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-gray-500 pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">Contact</button>
       </div>
     </div>
     <div className="absolute lg:top-15 top-10 bg-linear-to-br to-[#00001d]  from-[darkblue] w-full h-full">
       
     </div>
+    
    </>
   );
 }
