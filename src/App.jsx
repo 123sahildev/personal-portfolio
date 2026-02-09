@@ -7,7 +7,6 @@ export default function App() {
     <div className="absolute top-0  left-0 h-15 w-full bg-[darkblue] flex items-center">
       <h1 className="ml-4 text-[30px] font-bold text-white font-[Arial]">Sahil portfolio</h1>
     </div>
-    <button>New button added</button>
    </>
   )
 }
