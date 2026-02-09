@@ -4,8 +4,8 @@ import React from 'react'
 export default function App() {
   return (
    <>
-    <div className="absolute top-0  left-0 h-15 w-full bg-[darkblue] flex items-center">
-      <h1 className="ml-4 text-[30px] font-bold text-white font-[Arial]">Sahil portfolio</h1>
+    <div className="absolute top-0  left-0 h-10 lg:h-15 w-full the bg-[darkblue] flex items-center">
+      <h1 className="ml-4 text-[20px] lg:text-[30px] font-bold text-white font-[Arial]">SahilCode<span className="text-[#00eeff]">X</span></h1>
     </div>
    </>
   )
