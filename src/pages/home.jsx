@@ -49,7 +49,7 @@ export default function Home() {
         <button onClick={() => setSideBar(false)} className="items-center w-fit transform -translate-x-1 ml-0 px-1.5 duration-200 py-1 rounded-[50%] active:bg-[#2121213b]">
           <FontAwesomeIcon icon={faNavicon} className="scale-[1.4]"/>
         </button>
-        <Link to={"home"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1  w-full">Home</button></Link>
+        <Link to={"/home"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1  w-full">Home</button></Link>
         <Link to={"/projects"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">projects</button></Link>
         <Link to={"/about"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">about</button></Link>
         <Link to={"/contact"}><button className="flex font-bold pl-2  text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] uppercase mb-1 w-full">Contact</button></Link>
