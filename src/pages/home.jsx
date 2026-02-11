@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faL, faNavicon } from "@fortawesome/free-solid-svg-icons";
 import photo from "../assets/photo.jpg"
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
 
 export const SideModel = ({ ref , setSideBar}) => {
@@ -12,7 +13,7 @@ export const SideModel = ({ ref , setSideBar}) => {
       <>
         {ref && <div onClick={() => setSideBar(false)} className="w-full h-screen absolute top-10 left-0 bg-[#111111b5] ">chal raha ia </div>}
       </>
-    )
+    );
 
 }
 
@@ -26,7 +27,7 @@ export default function Home() {
       gsap.from(".text", {x : -20, duration : 1.3, opacity : 0})
 
 
-  }, [])
+  }, []);
 
 
   return (
@@ -34,10 +35,10 @@ export default function Home() {
     <div className="fixed z-10 top-0 left-0 h-10 lg:h-15 w-screen the border  border-b-[#8b8989a9] bg-[#01011f] flex items-center">
       <h1 className="ml-4 text-[20px] lg:text-[30px] font-bold text-white font-[Arial] ">SahilCode<span className="text-[#00eeff]">X</span></h1>
       <div className="hidden lg:visible absolute right-2 lg:flex items-center gap-1 lg:gap-1 lg:pr-4">
-        <li className="  lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">Home</li>
-        <li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">projects</li>
-        <li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">about</li>
-        <li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer ">Contact</li>
+        <Link to={"/home"}><li className="  lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">Home</li></Link>
+        <Link to={"/projects"}><li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">projects</li></Link>
+        <Link to={"/about"}><li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer">about</li></Link>
+        <Link to={"/contact"}><li className=" lg:py-1.5 list-none text-[12px] lg:text-[18px] hover:bg-[#45454532] rounded-[5px] lg:rounded-[15px] duration-300 text-white px-1 lg:px-3 font-[Arial] cursor-pointer ">Contact</li></Link>
       </div>
 
       <button onClick={() => setSideBar(true)} className=" lg:hidden flex items-center absolute top-10.5 left-0.5 px-1.5 duration-200 py-2 rounded-[50%] active:bg-[#7474743b]">
@@ -48,10 +49,10 @@ export default function Home() {
         <button onClick={() => setSideBar(false)} className="items-center w-fit transform -translate-x-1 ml-0 px-1.5 duration-200 py-1 rounded-[50%] active:bg-[#2121213b]">
           <FontAwesomeIcon icon={faNavicon} className="scale-[1.4]"/>
         </button>
-        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1  w-full">Home</button>
-        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">projects</button>
-        <button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">about</button>
-        <button className="flex font-bold pl-2  text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] uppercase mb-1 w-full">Contact</button>
+        <Link to={"home"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1  w-full">Home</button></Link>
+        <Link to={"/projects"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">projects</button></Link>
+        <Link to={"/about"}><button className="flex font-bold pl-2 uppercase text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] mb-1 w-full">about</button></Link>
+        <Link to={"/contact"}><button className="flex font-bold pl-2  text-[15px] border-b border-b-[#aaaa] pt-3 font-[Arial] active:bg-[#7474743b] uppercase mb-1 w-full">Contact</button></Link>
       </div>
     </div>
     <div className="absolute lg:top-15 top-10 bg-linear-to-br to-[#00001d]  from-[darkblue] w-full h-full">
